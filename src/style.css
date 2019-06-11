@@ -1,0 +1,15 @@
+h1,ul
+{
+color: blue;
+  text-align:center;
+}
+p{
+  text-align:center;
+}
+
+p.strong{
+ color:black;
+}
+table{
+padding-left: 200px;
+}
