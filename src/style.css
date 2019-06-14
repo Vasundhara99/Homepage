@@ -2,14 +2,26 @@ h1,ul
 {
 color: blue;
   text-align:center;
+  list-style-type:none;
 }
 p{
   text-align:center;
+  color:black;
 }
 
 p.strong{
  color:black;
 }
-table{
-padding-left: 200px;
+label{
+display:inline-block;
+float:left;
+clear:left;
+text-align:right;
+color:blue;
+}
+
+img
+{
+ padding-left:150px;
+ padding-top:100px;
 }
