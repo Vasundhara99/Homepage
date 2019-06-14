@@ -1,0 +1,38 @@
+<html>
+<head>
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<h1>EDIT IMAGES IN YOUR GALLERY</h1>
+<body>
+<script>
+function editImage()
+{
+    var img=JSON.parse(localStorage.getItem('imagesJSON'));
+    var name=document.getElementById("name").value;
+    var url=document.getElementById("url").value;
+    for(var i=0;i<img.images.length;i++)
+    {
+     if(img.images[i].name===name)
+     {
+     img.images[i].imageUrl=url;
+     img.images[i].name=name;
+     img.images[i].info=info;
+     img.images[i].date=date;
+     break;
+     }
+    }
+    localStorage.setItem('imagesJSON',JSON.stringify(img));
+ }
+</script>
+<form action="editImage.html" method="post">
+   <p> Enter the name of the image you want to edit:<input id="name" type="text" name="name"><br><br>
+    Enter the path of the image:<input id="url" type="text" name="url"><br><br>
+    Enter info about the image:<input id="info" type="text" name="info"><br><br>
+    Enter date:<input id="date" type="text" name="date"><br><br>
+       <input id="edit" type="submit" name="edit" value="edit" onclick="editImage()"></p>
+</form>
+<br>
+<br>
+<h1><a href="images1.html" target="_blank">GALLERY</a></h1>
+</body>
+</html>

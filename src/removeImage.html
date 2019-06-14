@@ -1,0 +1,32 @@
+<html>
+<head>
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<h1>REMOVE IMAGES FROM YOUR GALLERY</h1>
+<body>
+<script>
+function removeIm()
+{
+    var img=JSON.parse(localStorage.getItem('imagesJSON'));
+    var name=document.getElementById("name").value;
+    for(var i=0;i<img.images.length;i++)
+    {
+     if(img.images[i].name===name)
+     {
+     img.images.splice(i,1);
+
+     break;
+     }
+    }
+    localStorage.setItem('imagesJSON',JSON.stringify(img));
+ }
+</script>
+<form action="removeImage.html" method="post">
+    <p>Enter the name of the image you want to remove:<input id="name" type="text" name="name">
+        <input id="remove" type="submit" name="remove" value="remove" onclick="removeIm()"></p>
+</form>
+<br>
+<br>
+<h1><a href="images1.html" target="_blank">GALLERY</a></h1>
+</body>
+</html>

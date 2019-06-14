@@ -1,0 +1,35 @@
+<html>
+<head>
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<h1>ADD IMAGES TO YOUR GALLERY</h1>
+<body>
+<script>
+    function addImage()
+{
+var temp=new Object();
+
+var url=document.getElementById("url").value;
+var name=document.getElementById("name").value;
+var info=document.getElementById("info").value;
+var date=document.getElementById("date").value;
+temp["imageUrl"]=url;
+temp["name"]=name;
+temp["info"]=info;
+temp["date"]=date;
+var img=JSON.parse(localStorage.getItem('imagesJSON')) || [];
+img.images.push(temp);
+localStorage.setItem('imagesJSON',JSON.stringify(img));
+}
+</script>
+<form action="addImage.html" method="post">
+    <p>Enter the path:<input id="url" type="text" name="url" required minlength="10"><br><br>
+    Enter the name of the image: <input id="name" type="text" name="name" required minlength="3" maxlength="15"><br><br>
+    Enter info about the image: <input id="info" type="text" name="info"required minlength="3" maxlength="55"><br><br>
+    Enter date: <input id="date" type="text" name="date" required size="8" maxlength="8"><br><br>
+        <input id="add" type="submit" name="add" value="add" onclick="addImage()"></p>
+</form>
+<br><br>
+<h1><a href="images1.html" target="_blank">GALLERY</a></h1>
+</body>
+</html>
